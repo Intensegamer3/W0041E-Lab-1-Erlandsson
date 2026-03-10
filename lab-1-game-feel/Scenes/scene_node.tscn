@@ -1,21 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfe7vx75gtssa"]
+[gd_scene load_steps=5 format=3 uid="uid://dfe7vx75gtssa"]
 
 [ext_resource type="PackedScene" uid="uid://b465wwv57fh6o" path="res://Prefabs/ground_node.tscn" id="1_5b4q8"]
-[ext_resource type="PackedScene" uid="uid://b8jefelum4yfs" path="res://Prefabs/player_node.tscn" id="2_p4hi2"]
-[ext_resource type="Script" uid="uid://c6sifl65q18id" path="res://Scripts/PlayerNode.cs" id="3_4yik0"]
+[ext_resource type="PackedScene" uid="uid://cr0us22fr6lgr" path="res://Prefabs/PlayerCharacterBody.tscn" id="2_ux3ma"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wb62h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2wkq3"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3v4d"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_s4a15"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_neui0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y80bh"]
-albedo_color = Color(0, 0, 0.23529412, 1)
 
 [node name="SceneNode" type="Node3D"]
 
@@ -30,20 +20,4 @@ mesh = SubResource("BoxMesh_wb62h")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GroundNode/BaseArea"]
 shape = SubResource("BoxShape3D_2wkq3")
 
-[node name="PlayerNode" parent="." instance=ExtResource("2_p4hi2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6267209, 0)
-script = ExtResource("3_4yik0")
-metadata/_edit_group_ = true
-
-[node name="Area3D" type="Area3D" parent="PlayerNode"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerNode/Area3D"]
-shape = SubResource("CapsuleShape3D_r3v4d")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerNode/Area3D"]
-mesh = SubResource("CapsuleMesh_s4a15")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlayerNode/Area3D"]
-transform = Transform3D(0.3439603, 0, 0, 0, 0.16252226, 0, 0, 0, 0.13417363, -2.3841858e-07, 0.5477357, -0.5190911)
-mesh = SubResource("BoxMesh_neui0")
-surface_material_override/0 = SubResource("StandardMaterial3D_y80bh")
+[node name="PlayerCharacterBody" parent="." instance=ExtResource("2_ux3ma")]

@@ -24,9 +24,9 @@ public partial class PlayerNode : CharacterBody3D
 	}
 
 	public override void _PhysicsProcess(double delta)
-    {
-        Velocity = velocity;
-    }
+	{
+		Velocity = velocity;
+	}
 
 	void MoveForward()
 	{
