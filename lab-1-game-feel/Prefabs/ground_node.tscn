@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b465wwv57fh6o"]
+
+[node name="GroundNode" type="Node3D"]
