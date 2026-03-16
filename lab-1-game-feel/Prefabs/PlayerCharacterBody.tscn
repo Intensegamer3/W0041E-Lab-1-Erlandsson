@@ -13,6 +13,7 @@ albedo_color = Color(0, 0, 0.23529412, 1)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_nma8f")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6267209, 0)
