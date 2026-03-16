@@ -11,6 +11,7 @@ public partial class PlayerNode : CharacterBody3D
 	public float movementTwoDeceleration = 3;
 	public float movementTwoMaxSpeed = 5;
 
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -42,7 +43,7 @@ public partial class PlayerNode : CharacterBody3D
 				Vector3 acceleration = targetVelocity * movementTwoAcceleration;
 
 				Velocity += acceleration;
-				Velocity.Clamp(Vector3.Zero, targetVelocity);
+				
 			}
 			else
 			{
@@ -56,6 +57,8 @@ public partial class PlayerNode : CharacterBody3D
 					Velocity = Vector3.Zero;
 				}
 			}
+
+			
 		}
 		else if (movementMode == 3) // Ease acceleration, and constant deceleration
 		{
@@ -85,6 +88,7 @@ public partial class PlayerNode : CharacterBody3D
 		if (@event.IsActionPressed("SwitchMovementModeTo2"))
 		{
 			movementMode = 2;
+			Velocity.LimitLength(movementTwoMaxSpeed);
 		}
 
 		if (@event.IsActionPressed("SwitchMovementModeTo3"))
