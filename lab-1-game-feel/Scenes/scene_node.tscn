@@ -12,7 +12,7 @@
 [node name="GroundNode" parent="." instance=ExtResource("1_5b4q8")]
 
 [node name="BaseArea" type="Area3D" parent="GroundNode"]
-transform = Transform3D(26.605, 0, 0, 0, 1, 0, 0, 0, 28.905, 0, 0, 0)
+transform = Transform3D(26.605, 0, 0, 0, 1, 0, 0, 0, 28.905, -29.396221, 9.536743e-07, -26.632402)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GroundNode/BaseArea"]
